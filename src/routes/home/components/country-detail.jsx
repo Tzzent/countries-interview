@@ -81,7 +81,7 @@ export const CountryDetail = () => {
       !isOpen && "w-0"
     )}>
       <div className={cn(
-        "p-5 flex flex-col items-center",
+        "px-8 py-5 flex flex-col items-center",
         !isOpen && "hidden"
       )}>
         {loading ? (
@@ -95,23 +95,21 @@ export const CountryDetail = () => {
             >
               <X className="w-5 h-5" />
             </Button>
-            <div className="max-w-60 rounded-lg overflow-hidden">
-              {loadingPicture || !pictureUrl ? (
-                <Skeleton className="w-60 h-40 rounded-none" />
-              ) : (
-                <UnsplashImage
-                  id={data.country.name}
-                  htmlLink={htmlLink}
-                  pictureUrl={pictureUrl}
-                />
-              )}
-            </div>
+            {loadingPicture || !pictureUrl ? (
+              <Skeleton className="w-60 h-40 rounded-none" />
+            ) : (
+              <UnsplashImage
+                id={data.country.name}
+                htmlLink={htmlLink}
+                pictureUrl={pictureUrl}
+                className="rounded-lg mb-5"
+              />
+            )}
             <CountryFoot
-              emoji={data.country.emoji}
+              code={data.country.code}
               countryName={data.country.name}
               continentName={data.country.continent.name}
             />
-
             <ol className="space-y-2 mt-5">
               {list.map((item, index) => (
                 <li key={index}>

@@ -5,7 +5,6 @@ query Countries {
   countries {
     code
     name
-    emoji
     continent {
       name
     }

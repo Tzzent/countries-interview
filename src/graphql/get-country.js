@@ -4,7 +4,7 @@ export const GET_COUNTRY = gql`
 query Country($code: ID!) {
   country(code: $code) {
     name
-    emoji
+    code
     currency
     capital
     continent {

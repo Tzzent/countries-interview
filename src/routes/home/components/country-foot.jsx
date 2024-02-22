@@ -1,14 +1,16 @@
 export const CountryFoot = ({
-  emoji,
+  code,
   countryName,
   continentName,
 }) => {
   return (
     <div className="flex items-center">
       <div>
-        <span role="img">
-          {emoji}
-        </span>
+        <img
+          src={`https://flagcdn.com/40x30/${code.toLowerCase()}.png`}
+          alt={`${countryName}-flag-image`}
+          className="object-cover object-center"
+        />
       </div>
       <div className="ml-3">
         <p className="text-blue-700 font-bold">{countryName}</p>

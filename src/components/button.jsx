@@ -10,7 +10,7 @@ export const Button = ({
     <button
       onClick={onClick}
       className={cn(
-        "flex items-center justify-center bg-blue-600 text-white rounded-xl p-2 transition text-xs sm:text-sm",
+        "flex items-center justify-center bg-blue-600 text-white rounded-xl p-2 text-xs sm:text-sm hover:scale-105 transition-all",
         variant === "link" && "text-blue-600 bg-transparent hover:underline p-0",
         variant === "ghost" && "text-gray-500 bg-transparent hover:text-gray-700 p-0",
         className,
